@@ -1,9 +1,9 @@
 # Rick-Morty-React
 
-##Front-End
+## Front-End
 
 L'interface web est développé avec le framework ReactJS
 
-##Back-End
+## Back-End
 
 L'API est developpé avec le framework Symfony en PHP
