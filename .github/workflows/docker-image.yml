@@ -18,7 +18,7 @@ jobs:
       run: cd Back
       
     - name: Build the Docker image
-      run: ls
+      run: cd Back/ && ls
       
     - name: Build Docker image
       run: docker-compose build | docker-compose up -d | docker-compose exec app bash | composer install
