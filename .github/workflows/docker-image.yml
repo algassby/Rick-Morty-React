@@ -21,7 +21,7 @@ jobs:
       run: cd Back/ && ls
       
     - name: Build Docker image
-      run: cd Back && docker-compose build && docker-compose up -d && docker-compose exec -T php-app composer install
+      run: cd Back && docker-compose build && docker-compose up -d && docker exec -T php-app composer install
 
       
     - name: Install BDD
