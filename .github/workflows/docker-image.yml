@@ -21,7 +21,7 @@ jobs:
       run: cd Back/ && ls
       
     - name: Build Docker image
-      run: ls && docker-compose build && docker-compose up -d && docker-compose exec app bash && composer install
+      run: cd Back && docker-compose build && docker-compose up -d && docker-compose exec app bash && composer install
       
     - name: Install BDD
       run: php bin/console doctrine:migration:migrate | php bin/console doctrine:fixtures:load
