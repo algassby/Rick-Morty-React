@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Move in Back
-      run: cd Back
+      run: cd Back | ls -a
       
     - name: Build the Docker image
       run: docker build . --file Dockerfile 
