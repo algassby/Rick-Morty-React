@@ -1,0 +1,28 @@
+name: CI Back & Front
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Move in Back
+      run: cd Back
+      
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile 
+      
+    - name: Build Docker image
+      run: docker-compose build | docker-compose up -d | docker-compose exec app bash | composer install
+      
+    - name: Install BDD
+      run: php bin/console doctrine:migration:migrate | php bin/console doctrine:fixtures:load
+      
