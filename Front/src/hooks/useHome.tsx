@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { endpoint, Product } from "../App";
+import { endpoint, TProduct } from "../App";
 
 const useHome = () => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<TProduct[]>([]);
 
   const loadProducts = () => {
     return new Promise((resolve) =>

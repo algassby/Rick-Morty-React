@@ -5,7 +5,8 @@ import Product from "./components/Product";
 import Cart from "./components/Cart";
 
 export const endpoint = "http://localhost:8000/api";
-export type Product = {
+
+export type TProduct = {
   id: number;
   name: string;
   price: string;

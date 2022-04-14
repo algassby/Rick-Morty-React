@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { endpoint, Product } from "../App";
+import { endpoint, TProduct } from "../App";
 
 const useCart = () => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<TProduct[]>([]);
   const [message, setMessage] = useState<string | null>(null);
 
   const loadCart = () => {
@@ -22,7 +22,7 @@ const useCart = () => {
     loadCart();
   }, []);
 
-  const removeToCart = (product: Product) => {
+  const removeToCart = (product: TProduct) => {
     return new Promise((resolve) => {
       setLoading(true);
       fetch(`${endpoint}/cart/${product.id}`, {
