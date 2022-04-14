@@ -36,5 +36,5 @@ jobs:
       - name: Build Front
         uses: cypress-io/github-action@v2
         with:
-          build: npm run build
-          start: npm start
+          build: cd Front && npm run build
+          start: cd Front && npm start
