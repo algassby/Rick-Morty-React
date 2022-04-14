@@ -33,7 +33,7 @@ jobs:
       - name: Build Front
         run: cd Front && npm i
 
-      - name: Build Front
+      - name: Cypress Tests
         uses: cypress-io/github-action@v2
         with:
           build: cd Front && npm run build
