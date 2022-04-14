@@ -1,4 +1,4 @@
-[![CI Back & Front](https://github.com/enzotoyos/Rick-Morty-React/actions/workflows/docker-image.yml/badge.svg)](https://github.com/enzotoyos/Rick-Morty-React/actions/workflows/docker-image.yml)
+[![CI Back & Front](https://github.com/enzotoyos/Rick-Morty-React/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/enzotoyos/Rick-Morty-React/actions/workflows/docker-image.yml)
 
 # Rick-Morty-React
 
