@@ -36,8 +36,8 @@ jobs:
       - name: Build Front
         run: npm i
 
-      - name: Cypress Tests
-        uses: cypress-io/github-action@v2
-        with:
-          build: npm run build
-          start: npm start
+      # - name: Cypress Tests
+      #   uses: cypress-io/github-action@v2
+      #   with:
+      #     build: npm run build
+      #     start: npm start
