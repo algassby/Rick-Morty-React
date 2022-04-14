@@ -31,7 +31,10 @@ jobs:
         run: docker exec php-app php bin/phpunit
 
       - name: Build Front
-        run: cd Front && npm i
+        run: mv ./Front/* .
+
+      - name: Build Front
+        run: npm i
 
       - name: Cypress Tests
         uses: cypress-io/github-action@v2
