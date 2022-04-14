@@ -5,25 +5,27 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
+    
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
-    - name: Move in Back
-      run: cd Back
+    
+    - name: build compose file
+      run: cd Back && docker-compose build
       
-    - name: Go dossier Back
-      run: cd Back/ && ls
+    - name: run containers
+      run: cd Back && docker-compose up -d
       
-    - name: Build Docker image
-      run: cd Back && docker-compose build && docker-compose up -d && docker exec -T php-app composer install
-
+    - name: test docker containers
+      run: docker ps -a
       
-    - name: Install BDD
-      run: cd Back && php bin/console doctrine:migration:migrate && php bin/console doctrine:fixtures:load
+    - name: test volume
+      run: docker exec php-app ls -al
       
+    - name: composer dependencies
+      run: docker exec php-app composer install
+      
+    - name: phpunit test
+      run: docker exec php-app php bin/phpunit
