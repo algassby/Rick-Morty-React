@@ -28,15 +28,19 @@ jobs:
         run: docker exec php-app composer install
 
       - name: phpunit test
+        continue-on-error: true
         run: docker exec php-app php bin/phpunit
 
       - name: Move Front
+        continue-on-error: true
         run: mv ./Front/* .
 
       - name: Installation modules
+        continue-on-error: true
         run: npm i
 
       - name: Cypress Tests
+        continue-on-error: true
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
