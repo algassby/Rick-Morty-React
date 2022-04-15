@@ -37,16 +37,16 @@ class ApiTest extends WebTestCase
 //         $this->assertEquals(['id' => 1 , 'name' => 'ceci est un test' ,'price' => '10' ,'quantity' => 20 , 'image' => 'https://google.com'], $responseData);
 //     }
 
-//     public function testApiGetAllProducts(): void
-//     {
-//         $client = static::createClient();
-//         // Request a specific page
-//         $client->jsonRequest('GET', '/api/products');
-//         $response = $client->getResponse();
-//         $this->assertResponseIsSuccessful();
-//         $this->assertJson($response->getContent());
-//         $responseData = json_decode($response->getContent(), true);
-//     }
+    // public function testApiGetAllProducts(): void
+    // {
+    //     $client = static::createClient();
+    //     // Request a specific page
+    //     $client->jsonRequest('GET', '/api/products');
+    //     $response = $client->getResponse();
+    //     $this->assertResponseIsSuccessful();
+    //     $this->assertJson($response->getContent());
+    //     $responseData = json_decode($response->getContent(), true);
+    // }
     
     
 //     public function testApiGetProduct(): void

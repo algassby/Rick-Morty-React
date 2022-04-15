@@ -30,14 +30,14 @@ jobs:
       - name: phpunit test
         run: docker exec php-app php bin/phpunit
 
-      - name: Build Front
+      - name: Move Front
         run: mv ./Front/* .
 
-      - name: Build Front
+      - name: Installation modules
         run: npm i
 
-      # - name: Cypress Tests
-      #   uses: cypress-io/github-action@v2
-      #   with:
-      #     build: npm run build
-      #     start: npm start
+      - name: Cypress Tests
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm start
